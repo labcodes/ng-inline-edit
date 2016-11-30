@@ -1,6 +1,6 @@
 /**
  * ng-inline-edit v0.7.0 (http://tamerayd.in/ng-inline-edit)
- * Copyright 2015 Tamer Aydin (http://tamerayd.in)
+ * Copyright 2016 Tamer Aydin (http://tamerayd.in)
  * Licensed under MIT
  */
 (function(window, angular, undefined) {
@@ -79,6 +79,11 @@
 
           if (cancel || $scope.model === inputValue) {
             $scope.editMode = false;
+
+            if (cancel && $scope.cancelCallback) {
+              $scope.cancelCallback();
+            }
+
             if (byDOM) {
               $scope.$apply();
             }
@@ -161,6 +166,7 @@
           scope: {
             model: '=inlineEdit',
             callback: '&inlineEditCallback',
+            cancelCallback: '&inlineEditCancelCallback',
             validate: '&inlineEditValidation'
           },
           link: function(scope, element, attrs) {

@@ -14,6 +14,7 @@
           scope: {
             model: '=inlineEdit',
             callback: '&inlineEditCallback',
+            cancelCallback: '&inlineEditCancelCallback',
             validate: '&inlineEditValidation'
           },
           link: function(scope, element, attrs) {

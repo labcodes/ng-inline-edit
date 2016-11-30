@@ -55,6 +55,11 @@
 
           if (cancel || $scope.model === inputValue) {
             $scope.editMode = false;
+
+            if (cancel && $scope.cancelCallback) {
+              $scope.cancelCallback();
+            }
+
             if (byDOM) {
               $scope.$apply();
             }
