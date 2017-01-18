@@ -62,6 +62,8 @@
 
             if (byDOM) {
               $scope.$apply();
+            } else {
+              $scope.unchangedCallback();
             }
 
           } else {

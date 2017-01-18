@@ -1,6 +1,6 @@
 /**
- * ng-inline-edit v0.7.0 (http://tamerayd.in/ng-inline-edit)
- * Copyright 2016 Tamer Aydin (http://tamerayd.in)
+ * ng-inline-edit v0.7.1 (http://tamerayd.in/ng-inline-edit)
+ * Copyright 2017 Tamer Aydin (http://tamerayd.in)
  * Licensed under MIT
  */
 (function(window, angular, undefined) {
@@ -86,6 +86,8 @@
 
             if (byDOM) {
               $scope.$apply();
+            } else {
+              $scope.unchangedCallback();
             }
 
           } else {
@@ -167,6 +169,7 @@
             model: '=inlineEdit',
             callback: '&inlineEditCallback',
             cancelCallback: '&inlineEditCancelCallback',
+            unchangedCallback: '&inlineEditUnchangedCallback',
             validate: '&inlineEditValidation'
           },
           link: function(scope, element, attrs) {

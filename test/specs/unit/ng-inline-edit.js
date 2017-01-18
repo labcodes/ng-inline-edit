@@ -19,6 +19,9 @@ describe('angularInlineEdit', function() {
       },
       cancelCallback: function() {
         return true;
+      },
+      unchangedCallback: function() {
+        return true;
       }
     };
 
